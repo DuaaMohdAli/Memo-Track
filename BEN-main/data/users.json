@@ -1,0 +1,152 @@
+[
+  {
+    "id": "mglsi689ckchtn",
+    "journal": [],
+    "connections": [
+      "mgluv8xz1jm9bl"
+    ],
+    "connectionRequests": [],
+    "awards": [],
+    "games": {},
+    "username": "BENBIL",
+    "email": "benbil756@gmail.com",
+    "phone": "9791751986",
+    "password": "$2b$10$MsJ0tstjwGxUIjQV3KQliu2oU9yxEmwIeHCwzlB1grzGdnLCKIcuS",
+    "age": "18",
+    "userType": "patient",
+    "emergencyContact": {
+      "name": "12345",
+      "email": "benbil756@gmail.com",
+      "phone": "12345"
+    },
+    "qualification": "",
+    "nmcRegistrationNo": "",
+    "yearOfRegistration": "",
+    "medicalCouncil": "",
+    "memories": [
+      {
+        "id": "mglwk8jx",
+        "title": "FANTASTIC",
+        "notes": "RHETJ",
+        "timestamp": "2025-10-11T06:36:49.101Z"
+      },
+      {
+        "id": "mgubejr8",
+        "title": "dua",
+        "notes": "erfjhljhkj",
+        "timestamp": "2025-10-17T03:54:27.332Z"
+      }
+    ],
+    "medications": [
+      {
+        "id": "mglwrriv",
+        "medName": "PARACETAMOL-650",
+        "dose": "1 TABLET",
+        "time": "12:30 AM",
+        "assignedBy": "mgluv8xz1jm9bl",
+        "read": false
+      },
+      {
+        "id": "mglx2g2x",
+        "medName": "LUPIN-500",
+        "dose": "1 TABLET",
+        "time": "6:00PM",
+        "assignedBy": "mgluv8xz1jm9bl",
+        "read": false
+      }
+    ],
+    "assignedSongs": [
+      {
+        "id": "mglwuopw",
+        "title": "MACHO",
+        "url": "/uploads/mglwuonl-bbtwp8.mp3",
+        "assignedBy": "mgluv8xz1jm9bl"
+      }
+    ]
+  },
+  {
+    "id": "mgltr6rldiu40d",
+    "journal": [],
+    "connections": [],
+    "connectionRequests": [],
+    "awards": [],
+    "games": {},
+    "username": "AutoTest2",
+    "email": "autotest2@example.com",
+    "phone": "555-0300",
+    "password": "$2b$10$AkLczDnXypnit3Y4cNnyROFclHa0WtRguKB/Nkyt/HszRtUe6J3JO",
+    "age": "68",
+    "userType": "patient",
+    "emergencyContact": {
+      "name": "EC",
+      "email": "ec2@example.com",
+      "phone": "555-0001"
+    }
+  },
+  {
+    "id": "mgltwdz1th8omr",
+    "journal": [],
+    "connections": [],
+    "connectionRequests": [],
+    "awards": [],
+    "games": {},
+    "username": "MemoryTester",
+    "email": "memtester@example.com",
+    "phone": "555-0400",
+    "password": "$2b$10$Qsjwe215XpkL4WuRjfdyCuk.TIgSDYjvu9/70W.rct4/nQGX6JpW2",
+    "age": "60",
+    "userType": "patient",
+    "emergencyContact": {
+      "name": "EC",
+      "email": "ec3@example.com",
+      "phone": "555-0002"
+    }
+  },
+  {
+    "id": "mglty1ofrjjz2m",
+    "journal": [],
+    "connections": [],
+    "connectionRequests": [],
+    "awards": [],
+    "games": {},
+    "username": "MemFlow",
+    "email": "memflow@example.com",
+    "phone": "555-0500",
+    "password": "$2b$10$QtTPq58r65gwweswAlbCdeQMVJI5U4DLti04vX7fXArado2AUPIgK",
+    "age": "72",
+    "userType": "patient",
+    "emergencyContact": {
+      "name": "EC",
+      "email": "ec4@example.com",
+      "phone": "555-0003"
+    }
+  },
+  {
+    "id": "mgluv8xz1jm9bl",
+    "journal": [],
+    "memories": [],
+    "reminders": [],
+    "favorites": [],
+    "connections": [
+      "mglsi689ckchtn"
+    ],
+    "connectionRequests": [],
+    "awards": [],
+    "games": {},
+    "username": "BENBIL",
+    "email": "bj7549@srmist.edu.in",
+    "phone": "9791751986",
+    "password": "$2b$10$DzPqVPDxHj3PmcEF52swr.9gO6xN386d3IH/Rxch/4ksZ9ydQCn66",
+    "age": "20",
+    "userType": "caretaker",
+    "emergencyContact": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    "qualification": "PHD MBBS",
+    "nmcRegistrationNo": "benbil756@gmail.com",
+    "yearOfRegistration": "1964",
+    "medicalCouncil": "Tamil Nadu Medical Council"
+  }
+]

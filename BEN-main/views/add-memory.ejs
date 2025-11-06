@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <title>Add Memory - MEMO TRACK</title>
+</head>
+<body>
+  <h2 style="text-align:center;">Add Memory</h2>
+  <div style="max-width:700px;margin:1rem auto;padding:1rem;background:#fff;">
+    <form action="/add-memory" method="post">
+      <div>
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" required style="width:100%;padding:8px;margin:6px 0;" />
+      </div>
+      <div>
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="6" style="width:100%;padding:8px;margin:6px 0;"></textarea>
+      </div>
+      <div style="text-align:right;"><button type="submit" class="btn btn-primary">Add Memory</button></div>
+    </form>
+  </div>
+</body>
+</html>

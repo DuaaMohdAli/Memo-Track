@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+
+    <title>Login</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+        <style>
+            .brand-title { font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-weight:700; color: #ffffff; letter-spacing: 0.5px; }
+            .topic { font-family: 'Montserrat', sans-serif; }
+        </style>
+
+</head>
+
+<body>
+        <div class="content" style="text-align:center; margin-top:2rem;">
+            <div class="brand-title" style="font-size:36px; font-weight:800;">MEMO TRACK</div>
+            <div class="topic">Where concerns unwind, wellness connects</div>
+        </div>
+
+
+    <div class="card">
+        <h1>Login</h1>
+        <div style="margin-bottom:8px;">
+          <a class="btn btn-outline-primary" href="/login?role=patient">Patient login</a>
+          <a class="btn btn-outline-secondary" href="/login?role=caretaker">Caretaker login</a>
+        </div>
+        <% if (messages && messages.error) { %>
+            <p class="error-message">
+                <%= messages.error %>
+            </p>
+        <% } %>
+                <form action="/login" method="POST">
+                        <% if (role) { %>
+                            <input type="hidden" name="role" value="<%= role %>" />
+                        <% } %>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="<%= messages.error ? 'input-error' : '' %>"
+                            required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"
+                            class="<%= messages.error ? 'input-error' : '' %>" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                                <a href="/register">Register</a>
+                                <% if (role) { %>
+                                    <p style="font-size:0.9rem;color:#666;">Selected role: <%= role %></p>
+                                <% } %>
+    </div>
+
+</body>
+
+</html>

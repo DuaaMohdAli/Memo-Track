@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Reminders - MEMO TRACK</title>
+  <link rel="icon" type="image/x-icon" href="/assets/haven.ico">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #334155;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .navbar {
+      background-color: #ffffff !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .navbar .navbar-brand {
+      color: #3B82F6 !important;
+      font-weight: 700;
+    }
+    .navbar .nav-link {
+      color: #475569 !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .navbar .nav-link:hover {
+      color: #3B82F6 !important;
+    }
+    .navbar .dropdown-item:hover {
+      background-color: #f1f5f9;
+    }
+    .btn-danger {
+      background-color: #EF4444;
+      border-color: #EF4444;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    .btn-danger:hover {
+      background-color: #DC2626;
+      border-color: #DC2626;
+    }
+    .page-header h1 {
+      color: #1e293b;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+    .modern-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 25px;
+    }
+    .modern-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 1rem;
+    }
+    .card-icon {
+      font-size: 1.75rem;
+      margin-right: 1rem;
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 2rem 0;
+      color: #94a3b8;
+    }
+    .empty-state-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .medication-list, .events-list {
+      list-style: none;
+      padding: 0;
+    }
+    .medication-item, .event-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .medication-item:last-child, .event-item:last-child {
+      border-bottom: none;
+    }
+    .med-name, .event-name {
+      font-weight: 500;
+    }
+    .med-details, .event-date {
+      color: #64748b;
+    }
+    .med-dose {
+      margin-right: 1rem;
+    }
+    .song-item {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 1rem 0;
+    }
+    .song-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .song-title {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .audio-player {
+      width: 100%;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">MEMO TRACK</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/statistics">Statistics</a></li>
+          <li class="nav-item"><a class="nav-link" href="/add-doctor">Add Caretaker</a></li>
+          <li class="nav-item"><a class="nav-link" href="/journal">Journal</a></li>
+          <li class="nav-item"><a class="nav-link" href="/forum">Forum</a></li>
+          <li class="nav-item"><a class="nav-link" href="/todo">Calendar</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <form action="/sendSOS" method="post" class="me-2">
+            <button type="submit" id="sosButton" class="btn btn-danger">SOS</button>
+          </form>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="/edit-profile">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#" onclick="deleteAccount()">Delete Account</a></li>
+            </ul>
+            <form id="logout-form" action="/logout?_method=DELETE" method="POST" style="display: none;"></form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>🌟 Your Health Dashboard</h1>
+      <p>Medications, Music Therapy & Calendar Events</p>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="row">
+      
+      <!-- Medications Section -->
+      <div class="col-lg-4">
+        <div class="modern-card h-100">
+        <div class="card-header">
+          <div class="card-icon medication-icon">💊</div>
+          <h2 class="card-title">Medications</h2>
+        </div>
+        
+        <% const meds = (user && user.medications) ? user.medications : [] %>
+        <% if (meds.length === 0) { %>
+          <div class="empty-state">
+            <div class="empty-state-icon">💊</div>
+            <p>No medications scheduled</p>
+          </div>
+        <% } else { %>
+          <ul class="medication-list">
+            <% meds.forEach(m => { %>
+              <li class="medication-item">
+                <div class="med-name"><%= m.medName %></div>
+                <div class="med-details">
+                  <% if (m.dose) { %>
+                    <span class="med-dose"><%= m.dose %></span>
+                  <% } %>
+                  <span class="med-time"><%= m.time %></span>
+                </div>
+              </li>
+            <% }) %>
+          </ul>
+        <% } %>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+      <!-- Songs Section -->
+      <div class="modern-card">
+        <div class="card-header">
+          <div class="card-icon songs-icon">🎵</div>
+          <h2 class="card-title">Music Therapy</h2>
+        </div>
+        
+        <% const songs = (user && user.assignedSongs) ? user.assignedSongs : [] %>
+        <% if (songs.length === 0) { %>
+          <div class="empty-state">
+            <div class="empty-state-icon">🎵</div>
+            <p>No songs assigned</p>
+          </div>
+        <% } else { %>
+          <div class="songs-list">
+            <% songs.forEach(s => { %>
+              <div class="song-item">
+                <div class="song-header">
+                  <h3 class="song-title"><%= s.title || 'Untitled Song' %></h3>
+                </div>
+                <audio 
+                  class="audio-player" 
+                  controls 
+                  src="<%= s.url %>" 
+                  preload="metadata"
+                >
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+      </div>
+
+      <div class="col-lg-4">
+      <!-- Calendar Events Section -->
+      <div class="modern-card h-100">
+        <div class="card-header">
+          <div class="card-icon events-icon">📅</div>
+          <h2 class="card-title">Calendar Events</h2>
+        </div>
+        
+        <% const events = (user && user.events) ? user.events : [] %>
+        <% if (events.length === 0) { %>
+          <div class="empty-state">
+            <div class="empty-state-icon">📅</div>
+            <p>No events scheduled</p>
+          </div>
+        <% } else { %>
+          <ul class="events-list">
+            <% events.forEach(ev => { %>
+              <li class="event-item">
+                <div class="event-name"><%= ev.event %></div>
+                <div class="event-date">
+                  <%= ev.date %>
+                  <% if (ev.date_end) { %>
+                    <span> to <%= ev.date_end %></span>
+                  <% } %>
+                </div>
+              </li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
